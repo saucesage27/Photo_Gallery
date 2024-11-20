@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(130deg, #f9b7b7, #ff9ebd);
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+#title {
+    display: inline-block;
+    font-size: 5vw; 
+    font-family: cursive;
+    padding: 0 5vw; 
+    color: #fff;
+    text-shadow: 5px 5px 2px rgba(255, 158, 189, 0.7);
+}
+#title:hover {
+    color: #ff9ebd;
+    text-shadow: 5px 5px 2px rgba(255, 255, 255, 1);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vw; 
+    margin: 0 auto;
+    padding: 0 5vw; 
+    align-items: center;
+    justify-items: center;
+}
+
+.photoCollection {
+    position: relative;
+    width: 100%;
+    height: 40vw; 
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(100%); 
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+    border-radius: 15px;
+    border: 5px solid rgba(255, 255, 255, 0.5); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 1;
+    color: #fff;
+}
+
+.photoCollection:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.photoCollection .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.photoCollection h1 {
+    display: block; 
+    font-size: 4vw; 
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(255, 158, 189, 0.7);
+    opacity: 1;
+    transform: translateY(20px); 
+    transition: opacity 1s ease-in-out, transform 1s ease; 
+}
+
+.photoCollection p {
+    opacity: 0; 
+    visibility: hidden; 
+    position: absolute; 
+    bottom: 0;
+    left: 0; 
+    width: 100%; 
+    height: 15vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.2)); 
+    padding: 2vw 4vw; 
+    font-size: 1vw; 
+    color: #fff; 
+    text-shadow: 2px 2px 5px rgba(255, 158, 189, 0.7); 
+    border-radius: 0; 
+    transition: opacity 1s ease-in-out, transform 1s ease; 
+    transform: translateY(20px); 
+    z-index: 10;
+}
+
+.photoCollection:hover h1 {
+    opacity: 0; 
+    transform: translateY(-20px); 
+}
+
+.photoCollection:hover p {
+    opacity: 1; 
+    visibility: visible;
+    transform: translateY(0); 
+    font-size: 1vw; 
+    color: #fff; 
+    text-shadow: 2px 2px 5px rgba(255, 158, 189, 0.7); 
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.2)); 
+    padding: 1vw 5vw; 
+    line-height: 1.5;
+    border-radius: 0; 
+    width: 100%; 
+    height: 15vh;
+    margin: 0 auto; 
+    position: absolute; 
+    bottom: 0;
+    transition: opacity 1s ease-in-out; 
+}
+
+@media (max-width: 1024px) {
+    #title {
+        font-size: 7vw; 
+        padding: 0 4vw; 
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 4vw;
+    }
+
+    .photoCollection {
+        height: 35vw;
+    }
+
+    .photoCollection h1 {
+        font-size: 6vw;
+    }
+
+    .photoCollection:hover p {
+        font-size: 2vw;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1vw 1vw;
+    }
+}
+
+@media (max-width: 768px) {
+    #title {
+        font-size: 10vw;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 5vw 10vw;
+        gap: 30px;
+    }
+
+    .photoCollection {
+        height: 70vw;
+    }
+
+    .photoCollection h1 {
+        font-size: 8vw;
+    }
+
+    .photoCollection:hover p {
+        font-size: 3vw;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1vw 2vw;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        font-size: 12vw;
+    }
+
+    .photoCollection {
+        height: 75vw;
+    }
+
+    .photoCollection h1 {
+        font-size: 10vw;
+    }
+
+    .photoCollection:hover p {
+        font-size: 4vw;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1vw 2vw;
+    }
+}
